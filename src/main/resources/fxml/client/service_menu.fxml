@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="1000" prefHeight="700" style="-fx-background-color: rgba(15, 23, 42, 0.95);">
+
+    <stylesheets>
+        <URL value="@../../css/base.css" />
+        <URL value="@../../css/client.css" />
+    </stylesheets>
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 15 25; -fx-border-color: #334155; -fx-border-width: 0 0 1 0;">
+            <Button text="⬅ Quay lại" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 5; -fx-cursor: hand;" onAction="#backToDashboard"/>
+            <Label text="MENU ĐỒ ĂN &amp; DỊCH VỤ" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: -accent-color;"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <ToggleButton text="Tất cả" selected="true" style="-fx-base: #1e293b;"/>
+            <ToggleButton text="Đồ ăn" style="-fx-base: #1e293b;"/>
+            <ToggleButton text="Nước uống" style="-fx-base: #1e293b;"/>
+            <ToggleButton text="Thẻ nạp" style="-fx-base: #1e293b;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <content>
+                <FlowPane hgap="20" vgap="20" style="-fx-padding: 25; -fx-background-color: transparent;">
+                    
+                    <VBox styleClass="product-card" prefWidth="200">
+                        <StackPane style="-fx-background-color: black; -fx-pref-height: 120; -fx-background-radius: 5;">
+                            <Label text="[ẢNH MÌ TÔM]" style="-fx-text-fill: gray;"/>
+                        </StackPane>
+                        
+                        <VBox spacing="5" style="-fx-padding: 10 0 0 0;">
+                            <Label text="Mì tôm trứng bò khô" wrapText="true" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+                            <Label text="15.000 VNĐ" style="-fx-text-fill: -accent-color; -fx-font-weight: bold;"/>
+                            <Button text="+ Thêm vào giỏ" maxWidth="Infinity" style="-fx-background-color: -success-color; -fx-text-fill: white; -fx-cursor: hand;"/>
+                        </VBox>
+                    </VBox>
+
+                    <VBox styleClass="product-card" prefWidth="200">
+                        <StackPane style="-fx-background-color: black; -fx-pref-height: 120; -fx-background-radius: 5;">
+                            <Label text="[ẢNH STING]" style="-fx-text-fill: gray;"/>
+                        </StackPane>
+                        
+                        <VBox spacing="5" style="-fx-padding: 10 0 0 0;">
+                            <Label text="Sting Dâu tây" wrapText="true" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+                            <Label text="12.000 VNĐ" style="-fx-text-fill: -accent-color; -fx-font-weight: bold;"/>
+                            <Button text="+ Thêm vào giỏ" maxWidth="Infinity" style="-fx-background-color: -success-color; -fx-text-fill: white; -fx-cursor: hand;"/>
+                        </VBox>
+                    </VBox>
+
+                    </FlowPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: -secondary-color; -fx-padding: 15 25; -fx-border-color: -accent-color; -fx-border-width: 1 0 0 0;">
+            <Label text="Giỏ hàng của bạn:" style="-fx-text-fill: -text-muted;"/>
+            <Label text="2 món" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <Label text="Tổng cộng:" style="-fx-text-fill: white;"/>
+            <Label text="27.000 VNĐ" style="-fx-text-fill: -success-color; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            
+            <Button text="ĐẶT HÀNG NGAY" style="-fx-background-color: -accent-color; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-cursor: hand;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

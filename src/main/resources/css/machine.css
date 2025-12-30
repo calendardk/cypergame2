@@ -1,0 +1,110 @@
+/* resources/css/machine.css */
+
+/* Container chứa danh sách máy */
+.machine-container {
+  -fx-background-color: #131419;
+  -fx-padding: 20;
+}
+
+/* --- STYLE THẺ MÁY (CARD) CÓ KHUNG --- */
+.machine-card {
+  /* Nền tối và viền */
+  -fx-background-color: #1f2029;
+  -fx-border-color: #353646; /* Màu viền mặc định */
+  -fx-border-width: 2;
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+
+  /* Kích thước cố định cho ô vuông */
+  -fx-pref-width: 180;
+  -fx-pref-height: 200;
+  -fx-padding: 15;
+
+  /* Bóng đổ nhẹ tạo độ nổi */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 1);
+
+  /* Căn chỉnh nội dung bên trong */
+  -fx-alignment: TOP_CENTER;
+  -fx-spacing: 10;
+  -fx-cursor: hand;
+  -fx-transition: all 0.2s;
+}
+
+/* Hiệu ứng khi di chuột vào thẻ */
+.machine-card:hover {
+  -fx-translate-y: -3;
+  -fx-background-color: #252635;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 8, 0, 0, 2);
+}
+
+/* Icon to ở giữa */
+.big-icon {
+  -fx-font-size: 40px;
+  -fx-padding: 10 0;
+}
+
+/* --- MÀU TRẠNG THÁI (ENUM) --- */
+
+/* 1. AVAILABLE (Xanh Lá) */
+.status-available {
+  -fx-border-color: #2ecc71;
+}
+.status-available .machine-name,
+.status-available .big-icon,
+.status-available .status-label {
+  -fx-text-fill: #2ecc71;
+}
+
+/* 2. IN_USE (Xanh Neon) */
+.status-in_use {
+  -fx-border-color: #00d2d3;
+}
+.status-in_use .machine-name,
+.status-in_use .big-icon,
+.status-in_use .status-label {
+  -fx-text-fill: #00d2d3;
+}
+
+/* 3. PAUSED (Cam) */
+.status-paused {
+  -fx-border-color: #ff9f43;
+}
+.status-paused .machine-name,
+.status-paused .big-icon,
+.status-paused .status-label {
+  -fx-text-fill: #ff9f43;
+}
+
+/* 4. MAINTENANCE (Đỏ) */
+.status-maintenance {
+  -fx-border-color: #ff4757;
+}
+.status-maintenance .machine-name,
+.status-maintenance .big-icon,
+.status-maintenance .status-label {
+  -fx-text-fill: #ff4757;
+}
+
+/* 5. OFFLINE (Xám) */
+.status-offline {
+  -fx-border-color: #57606f;
+  -fx-opacity: 0.7;
+}
+.status-offline .machine-name,
+.status-offline .big-icon,
+.status-offline .status-label {
+  -fx-text-fill: #747d8c;
+}
+
+/* Các nhãn phụ */
+.info-label {
+  -fx-text-fill: #a0a0b0;
+  -fx-font-size: 11px;
+}
+.user-label {
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+}
+.time-label {
+  -fx-font-size: 11px;
+}

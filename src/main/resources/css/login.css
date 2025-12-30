@@ -1,0 +1,21 @@
+/* login.css */
+.root {
+  -fx-background-color: -primary-color;
+}
+.login-card {
+  -fx-background-color: -secondary-color;
+  -fx-background-radius: 15;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+  -fx-padding: 30;
+}
+.tab-pane .tab-header-area .tab-header-background {
+  -fx-background-color: transparent;
+}
+.tab-pane .tab {
+  -fx-background-color: transparent;
+  -fx-text-base-color: -text-color;
+}
+.tab-pane .tab:selected {
+  -fx-border-color: -accent-color;
+  -fx-border-width: 0 0 2 0;
+}

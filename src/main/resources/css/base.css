@@ -1,0 +1,36 @@
+/* --- base.css : TOÀN BỘ NỘI DUNG --- */
+.root {
+  /* MÀU NỀN CHÍNH (Phần nội dung bên phải) - Màu xanh đen rất sâu */
+  -primary-color: #0f172a;
+
+  /* MÀU NỀN SIDEBAR (Menu trái) - Màu tối sẫm, lì hơn */
+  -secondary-color: #1e293b;
+
+  /* MÀU ĐIỂM NHẤN - Xanh Neon (Dùng cho icon, text hover) */
+  -accent-color: #0ea5e9;
+
+  /* MÀU CHỮ CHÍNH - Trắng sáng */
+  -text-color: #f8fafc;
+
+  /* MÀU CHỮ PHỤ - Xám (Dùng cho text chưa active) */
+  -text-muted: #94a3b8;
+
+  /* MÀU TRẠNG THÁI */
+  -danger-color: #ef4444; /* Đỏ báo lỗi/Offline */
+  -success-color: #22c55e; /* Xanh lá báo Online */
+
+  /* FONT CHỮ CHUNG */
+  -fx-font-family: "Segoe UI", sans-serif;
+  -fx-font-size: 14px;
+}
+
+/* Scrollbar (Thanh cuộn) cho đẹp, tiệp màu tối */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+  -fx-background-color: transparent;
+}
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+  -fx-background-color: #475569;
+  -fx-background-radius: 5;
+}

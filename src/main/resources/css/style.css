@@ -1,0 +1,64 @@
+/* resources/css/style.css */
+
+/* --- CẤU HÌNH CHUNG --- */
+.root {
+  -fx-font-family: "Segoe UI", sans-serif;
+  -fx-background-color: #131419; /* Nền tối gaming */
+}
+
+/* Header & Text */
+.header-text {
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #00d2d3; /* Xanh Neon */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 210, 211, 0.4), 10, 0, 0, 0);
+}
+.sub-header {
+  -fx-font-size: 14px;
+  -fx-text-fill: #a0a0b0;
+}
+.label,
+.text {
+  -fx-text-fill: white;
+}
+
+/* Buttons */
+.button {
+  -fx-background-color: #2d2e3d;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-cursor: hand;
+  -fx-background-radius: 5;
+  -fx-transition: all 0.2s;
+}
+.button:hover {
+  -fx-background-color: #3e3f50;
+}
+
+.primary-button {
+  -fx-background-color: linear-gradient(to right, #00d2d3, #00a8ff);
+  -fx-text-fill: #131419;
+}
+.primary-button:hover {
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 210, 211, 0.6), 15, 0, 0, 0);
+}
+
+/* Inputs */
+.text-field,
+.combo-box-base {
+  -fx-background-color: #1f2029;
+  -fx-text-fill: white;
+  -fx-border-color: #353646;
+  -fx-border-width: 0 0 2 0;
+}
+
+/* --- FIX LỖI TRẮNG SCROLLPANE --- */
+.scroll-pane {
+  -fx-background-color: transparent;
+  -fx-control-inner-background: transparent;
+  -fx-background-insets: 0;
+  -fx-padding: 0;
+}
+.scroll-pane > .viewport {
+  -fx-background-color: transparent;
+}

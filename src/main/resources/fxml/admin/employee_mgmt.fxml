@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cybergame.ui.fxcontroller.EmployeeMgmtController"
+            prefWidth="1000" prefHeight="700"
+            style="-fx-background-color: -primary-color;">
+
+    <stylesheets>
+        <URL value="@../../css/base.css"/>
+        <URL value="@../../css/admin.css"/>
+    </stylesheets>
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label text="QUẢN LÝ NHÂN VIÊN"
+                       style="-fx-font-size: 24px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: white;"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <ComboBox fx:id="cmbStatusFilter" prefWidth="120" />
+                    
+                    <HBox spacing="0"
+                          style="-fx-background-color: -secondary-color;
+                                 -fx-background-radius: 5;">
+                        <TextField fx:id="txtSearch"
+                                   promptText="🔍 Tìm tên hoặc SĐT..."
+                                   style="-fx-background-color: transparent;
+                                          -fx-text-fill: white;
+                                          -fx-pref-width: 250;"/>
+                        <Button text="Tìm"
+                                style="-fx-background-color: -accent-color;
+                                       -fx-text-fill: white;
+                                       -fx-background-radius: 0 5 5 0;"
+                                onAction="#handleSearch"/>
+                    </HBox>
+                </HBox>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="+ Thêm Nhân Viên"
+                        style="-fx-background-color: -success-color;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;"
+                        onAction="#handleAddEmployee"/>
+
+                <Button text="👁 Xem thông tin"
+                        style="-fx-background-color: -secondary-color;
+                               -fx-text-fill: white;"
+                        onAction="#handleViewEmployee"/>
+
+                <Button text="🔒 Khóa/Mở"
+                        style="-fx-background-color: #f59e0b;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;"
+                        onAction="#handleLockUnlock"/>
+
+                <Button text="🗑 Xóa"
+                        style="-fx-background-color: rgba(239,68,68,0.2);
+                               -fx-text-fill: -danger-color;
+                               -fx-border-color: -danger-color;"
+                        onAction="#handleDeleteEmployee"/>
+            </HBox>
+
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox style="-fx-padding: 0 20 20 20;">
+            <TableView fx:id="employeeTable"
+                       VBox.vgrow="ALWAYS"
+                       styleClass="table-view">
+
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                    <TableColumn fx:id="colName" text="Họ và Tên" prefWidth="350"/>
+                    <TableColumn fx:id="colPhone" text="Số điện thoại" prefWidth="180"/>
+                    <TableColumn fx:id="colStatus" text="Trạng thái" prefWidth="150"/>
+                </columns>
+
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>

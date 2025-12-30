@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Line?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           stylesheets="@../../css/style.css"
+           fx:controller="com.cybergame.ui.fxcontroller.LoginController"
+           style="-fx-background-color: #0b0c10;"> <VBox alignment="CENTER" spacing="25" maxWidth="450" 
+          style="-fx-background-color: rgba(31, 32, 41, 0.95); -fx-background-radius: 15; -fx-padding: 40; -fx-border-color: #00d2d3; -fx-border-width: 2; -fx-effect: dropshadow(three-pass-box, rgba(0,210,211,0.3), 30, 0, 0, 0);">
+        
+        <Text text="SYSTEM LOCKED" styleClass="header-text" style="-fx-font-size: 36px; -fx-fill: #ff4757;"/>
+        <Text text="CYBER GAME CLIENT" styleClass="sub-header" style="-fx-fill: #00d2d3;"/>
+        
+        <Line endX="300" stroke="#353646" strokeWidth="2"/>
+
+        <VBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="USER ID" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #00d2d3;"/>
+            <TextField fx:id="custUser" promptText="Enter member account..." styleClass="text-field"/>
+            
+            <Label text="PASSWORD" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #00d2d3;"/>
+            <PasswordField fx:id="custPass" promptText="Enter password..." styleClass="password-field"/>
+        </VBox>
+
+        <Button text="UNLOCK TERMINAL" styleClass="button, primary-button" 
+                style="-fx-font-size: 16px; -fx-pref-width: 350; -fx-padding: 12;" 
+                onAction="#handleCustomerLogin"/>
+                
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Need Help?" style="-fx-text-fill: #606070;"/>
+            <Hyperlink text="Call Staff" style="-fx-text-fill: #00d2d3;"/>
+        </HBox>
+    </VBox>
+</StackPane>

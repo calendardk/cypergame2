@@ -1,0 +1,215 @@
+/* --- admin.css : TOÀN BỘ NỘI DUNG --- */
+
+/* =================================================================
+   1. SIDEBAR (MENU TRÁI)
+   ================================================================= */
+
+/* Khung chứa menu */
+.sidebar {
+  -fx-background-color: -secondary-color; /* Nền tối sẫm */
+  -fx-border-color: #020617; /* Viền siêu tối ngăn cách với nội dung */
+  -fx-border-width: 0 1 0 0; /* Chỉ kẻ viền bên phải */
+}
+
+/* Nút chức năng trong menu */
+.sidebar-button {
+  -fx-background-color: transparent; /* Nền trong suốt để tệp màu tối */
+  -fx-text-fill: -text-muted; /* Chữ mặc định màu xám cho đỡ chói */
+
+  /* KÍCH THƯỚC & FONT */
+  -fx-font-size: 16px; /* Chữ to rõ ràng */
+  -fx-font-weight: bold;
+  -fx-pref-height: 65px; /* Chiều cao nút lớn (65px) cho thoáng */
+
+  /* CĂN CHỈNH */
+  -fx-alignment: CENTER_LEFT; /* Căn trái */
+  -fx-padding: 0 0 0 25; /* Cách lề trái 25px */
+  -fx-cursor: hand;
+
+  /* ĐƯỜNG KẺ NGĂN CÁCH MỜ GIỮA CÁC NÚT */
+  -fx-border-color: rgba(255, 255, 255, 0.05);
+  -fx-border-width: 0 0 1 0;
+}
+
+/* Hiệu ứng khi di chuột vào nút (Hover) */
+.sidebar-button:hover {
+  -fx-background-color: #334155; /* Nền sáng lên 1 chút */
+  -fx-text-fill: -accent-color; /* Chữ chuyển màu xanh Neon */
+
+  /* Hiệu ứng vạch sáng bên trái */
+  -fx-border-color: -accent-color;
+  -fx-border-width: 0 0 0 4; /* Vạch màu xanh dày 4px bên trái */
+  -fx-padding: 0 0 0 21; /* Bù trừ padding để chữ không bị nhảy */
+}
+
+/* Hiệu ứng khi nút đang được chọn (Active) - Dùng khi code Controller set style */
+.sidebar-button:selected,
+.sidebar-button:focused {
+  -fx-background-color: #0f172a; /* Nền đậm hơn */
+  -fx-text-fill: -accent-color;
+  -fx-border-color: -accent-color;
+  -fx-border-width: 0 0 0 4;
+  -fx-padding: 0 0 0 21;
+}
+
+/* =================================================================
+   2. TOP BAR & CÁC NÚT ĐIỀU KHIỂN
+   ================================================================= */
+
+/* Nút 3 gạch (Hamburger) ở góc trên */
+.hamburger-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: -accent-color;
+  -fx-font-size: 22px; /* Icon to */
+  -fx-cursor: hand;
+  -fx-border-color: #334155;
+  -fx-border-radius: 5;
+  -fx-border-width: 1;
+  -fx-padding: 5 12;
+}
+
+.hamburger-button:hover {
+  -fx-background-color: #334155;
+  -fx-text-fill: white;
+}
+
+/* =================================================================
+   3. MACHINE MANAGEMENT (LƯỚI MÁY TRẠM)
+   ================================================================= */
+
+/* Ô hiển thị từng máy */
+.machine-card {
+  -fx-background-color: -secondary-color;
+  -fx-background-radius: 8;
+
+  /* Đổ bóng nhẹ */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 8, 0, 0, 2);
+
+  -fx-padding: 15;
+  -fx-min-width: 140;
+  -fx-min-height: 140;
+  -fx-cursor: hand;
+  -fx-border-width: 1;
+  -fx-border-color: #334155;
+}
+
+/* Hiệu ứng nổi lên khi di chuột vào máy */
+.machine-card:hover {
+  -fx-translate-y: -4;
+  -fx-border-color: -accent-color;
+}
+
+/* Màu trạng thái chữ */
+.status-online {
+  -fx-text-fill: -success-color; /* Xanh lá */
+}
+.status-offline {
+  -fx-text-fill: -text-muted; /* Xám */
+  -fx-opacity: 0.7;
+}
+.status-maintenance {
+  -fx-text-fill: -danger-color; /* Đỏ */
+}
+/* =================================================================
+   5. TABLE VIEW (GAMING STYLE - NEON & GLASS)
+   ================================================================= */
+
+/* 1. Khung bao quanh bảng */
+.table-view {
+  -fx-background-color: transparent; /* Nền trong suốt để lộ background */
+  -fx-border-color: rgba(14, 165, 233, 0.3); /* Viền xanh mờ bao quanh */
+  -fx-border-width: 1;
+  /* Hiệu ứng phát sáng nhẹ (Glow) quanh bảng */
+  -fx-effect: dropshadow(three-pass-box, rgba(14, 165, 233, 0.2), 15, 0, 0, 0);
+}
+
+/* 2. Tiêu đề cột (Header) */
+.table-view .column-header-background {
+  -fx-background-color: rgba(15, 23, 42, 0.95); /* Màu tối đậm */
+  -fx-border-color: -accent-color; /* Viền neon ngăn cách với dữ liệu */
+  -fx-border-width: 0 0 2 0; /* Chỉ kẻ viền dưới dày 2px */
+}
+
+.table-view .column-header {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent rgba(255, 255, 255, 0.1) transparent transparent; /* Kẻ dọc mờ giữa các header */
+}
+
+.table-view .column-header .label {
+  -fx-text-fill: -accent-color; /* Chữ tiêu đề màu Xanh Neon */
+  -fx-font-weight: bold;
+  -fx-font-family: "Segoe UI Black"; /* Font chữ dày, cục súc kiểu game */
+  -fx-alignment: CENTER_LEFT;
+  -fx-padding: 10 5;
+}
+
+/* 3. Dòng dữ liệu (Rows) - Hiệu ứng kính mờ */
+.table-row-cell {
+  -fx-background-color: rgba(30, 41, 59, 0.4); /* Màu nền trong suốt (Glassy) */
+  -fx-border-color: transparent transparent rgba(255, 255, 255, 0.05)
+    transparent; /* Kẻ ngang siêu mờ */
+  -fx-border-width: 1;
+  -fx-padding: 0 5;
+}
+
+/* Ô lẻ (Zebra stripes) - Để phân biệt dòng */
+.table-row-cell:odd {
+  -fx-background-color: rgba(30, 41, 59, 0.6); /* Đậm hơn xíu */
+}
+
+/* Text trong ô */
+.table-view .table-cell {
+  -fx-text-fill: #e2e8f0; /* Màu trắng xám sáng */
+  -fx-alignment: CENTER_LEFT;
+  -fx-padding: 12 10; /* Tăng padding cho thoáng */
+  -fx-font-size: 14px;
+}
+
+/* 4. HIỆU ỨNG DI CHUỘT (HOVER) - CỰC QUAN TRỌNG */
+.table-row-cell:hover {
+  -fx-background-color: rgba(14, 165, 233, 0.15); /* Sáng lên màu xanh */
+  -fx-border-color: -accent-color; /* Viền phát sáng bao quanh dòng */
+  -fx-border-width: 1; /* Hiện viền rõ */
+  -fx-cursor: hand;
+
+  /* Hiệu ứng trượt nhẹ sang phải khi di chuột vào (Animation giả) */
+  -fx-translate-x: 3;
+}
+
+/* 5. Dòng đang được chọn (Selected) */
+.table-row-cell:selected {
+  -fx-background-color: rgba(14, 165, 233, 0.25); /* Nền xanh đậm hơn */
+  -fx-text-fill: white;
+
+  /* Kẻ vạch Neon dày bên trái để đánh dấu */
+  -fx-border-color: -accent-color;
+  -fx-border-width: 0 0 0 4; /* Vạch trái 4px */
+}
+
+/* Fix lỗi chữ đen khi chọn dòng ở một số phiên bản JavaFX */
+.table-row-cell:selected .text {
+  -fx-fill: white;
+}
+
+/* 6. Thanh cuộn (Scrollbar) - Làm mảnh và tối đi */
+.table-view .scroll-bar:vertical,
+.table-view .scroll-bar:horizontal {
+  -fx-background-color: transparent;
+}
+.table-view .scroll-bar:vertical .track,
+.table-view .scroll-bar:horizontal .track {
+  -fx-background-color: rgba(0, 0, 0, 0.3);
+  -fx-background-radius: 10;
+}
+.table-view .scroll-bar:vertical .thumb,
+.table-view .scroll-bar:horizontal .thumb {
+  -fx-background-color: #475569;
+  -fx-background-radius: 10;
+}
+.table-view .scroll-bar .thumb:hover {
+  -fx-background-color: -accent-color; /* Di chuột vào thanh cuộn thì sáng xanh */
+}
+/* Ẩn góc vuông giao nhau giữa 2 thanh cuộn */
+.table-view .corner {
+  -fx-background-color: transparent;
+}

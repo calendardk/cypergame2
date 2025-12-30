@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cybergame.ui.fxcontroller.MachineMgmtController"
+            prefWidth="1000" prefHeight="700"
+            style="-fx-background-color: -primary-color;">
+
+    <stylesheets>
+        <URL value="@../../css/base.css"/>
+        <URL value="@../../css/admin.css"/>
+        <URL value="@../../css/machine.css"/>
+    </stylesheets>
+
+    <top>
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: -secondary-color; -fx-border-color: #333; -fx-border-width: 0 0 1 0;">
+            
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="QUẢN LÝ MÁY TRẠM"
+                       style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 0);"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="➕ Thêm Máy" onAction="#handleAdd" 
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                <Button text="👁 Xem / Sửa" onAction="#handleView" 
+                        style="-fx-background-color: #475569; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                <Button text="🗑 Xóa" onAction="#handleDelete" 
+                        style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Trạng thái:" style="-fx-text-fill: -text-muted; -fx-font-weight: bold;"/>
+
+                <ToggleButton fx:id="btnAll" text="Tất cả" selected="true" onAction="#filterAll">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="filterGroup"/>
+                    </toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="btnAvailable" text="Sẵn sàng" onAction="#filterAvailable" toggleGroup="$filterGroup"/>
+                <ToggleButton fx:id="btnInUse" text="Đang dùng" onAction="#filterInUse" toggleGroup="$filterGroup"/>
+                <ToggleButton fx:id="btnPaused" text="Tạm dừng" onAction="#filterPaused" toggleGroup="$filterGroup"/>
+                <ToggleButton fx:id="btnMaintenance" text="Bảo trì" onAction="#filterMaintenance" toggleGroup="$filterGroup"/>
+                <ToggleButton fx:id="btnOffline" text="Offline" onAction="#filterOffline" toggleGroup="$filterGroup"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <TextField fx:id="txtSearch"
+                           promptText="🔍 Tìm tên máy..."
+                           onKeyReleased="#handleSearch"
+                           style="-fx-pref-width: 250; -fx-background-radius: 20; -fx-padding: 8 15;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
+            <content>
+                <FlowPane fx:id="machineGrid"
+                          hgap="20" vgap="20"
+                          style="-fx-padding: 25; -fx-background-color: transparent;"/>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../../css/admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cybergame.ui.fxcontroller.CustomerMgmtController">
+
+    <top>
+        <VBox spacing="0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="header-section">
+                <padding>
+                    <Insets left="20.0" right="20.0" />
+                </padding>
+                <children>
+                    <Label text="QUẢN LÝ KHÁCH HÀNG" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="22.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #2b2b2b; -fx-border-color: #3e3e3e; -fx-border-width: 0 0 1 0;">
+                <padding>
+                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                </padding>
+                <children>
+                    <Button onAction="#onAdd" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="+ THÊM KHÁCH" />
+                    <Button onAction="#onUpdate" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="SỬA" />
+                    <Button onAction="#onDelete" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="XÓA" />
+                    
+                    <Button onAction="#onLockUnlock" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-weight: bold;" text="🔒 KHÓA / MỞ" />
+                    
+                    <Label text="|" textFill="#666666"><font><Font size="18.0" /></font></Label>
+                    
+                    <Button onAction="#onTopUp" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;" text="💲 NẠP TIỀN" />
+                    <Button onAction="#onRefresh" style="-fx-background-color: #7f8c8d; -fx-text-fill: white;" text="🔄 TẢI LẠI" />
+
+                    <HBox HBox.hgrow="ALWAYS" />
+
+                    <Label text="🔍" textFill="WHITE"><font><Font size="14.0" /></font></Label>
+                    <TextField fx:id="txtSearch" prefWidth="250.0" promptText="Tìm theo tên, SĐT..." styleClass="input-field" />
+                </children>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableAccounts" style="-fx-background-color: #2b2b2b;" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colUsername" prefWidth="150.0" text="Tài khoản" />
+                <TableColumn fx:id="colFullname" prefWidth="200.0" text="Họ tên hiển thị" />
+                <TableColumn fx:id="colPhone" prefWidth="120.0" text="SĐT" />
+                <TableColumn fx:id="colBalance" prefWidth="150.0" style="-fx-alignment: CENTER-RIGHT; -fx-text-fill: #2ecc71; -fx-font-weight: bold;" text="Số dư" />
+                <TableColumn fx:id="colStatus" prefWidth="120.0" style="-fx-alignment: CENTER;" text="Trạng thái" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+            
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem onAction="#onUpdate" text="✏ Sửa thông tin" />
+                        <MenuItem onAction="#onLockUnlock" text="🔒 Khóa / Mở khóa" />
+                        <MenuItem onAction="#onTopUp" text="💲 Nạp tiền" />
+                        <MenuItem onAction="#onDelete" text="❌ Xóa khách hàng" />
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </center>
+
+</BorderPane>

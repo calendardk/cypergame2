@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fitToWidth="true" style="-fx-background: -primary-color; -fx-border-color: transparent;">
+
+    <stylesheets>
+        <URL value="@../../css/base.css" />
+        <URL value="@../../css/admin.css" />
+    </stylesheets>
+
+    <content>
+        <VBox spacing="30" style="-fx-background-color: -primary-color; -fx-padding: 30;">
+            
+            <Label text="TỔNG QUAN HỆ THỐNG" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+            <FlowPane hgap="20" vgap="20" prefWrapLength="1000">
+                
+                <HBox styleClass="stat-card" spacing="15" alignment="CENTER_LEFT" prefWidth="280">
+                    <StackPane styleClass="stat-icon-container" style="-fx-background-color: rgba(14, 165, 233, 0.2);">
+                        <Label text="🖥" style="-fx-font-size: 28px;"/>
+                    </StackPane>
+                    <VBox alignment="CENTER_LEFT">
+                        <Label text="Máy đang chơi" styleClass="stat-title"/>
+                        <Label text="15 / 50" styleClass="stat-value" style="-fx-text-fill: -accent-color;"/>
+                    </VBox>
+                </HBox>
+
+                <HBox styleClass="stat-card" spacing="15" alignment="CENTER_LEFT" prefWidth="280">
+                    <StackPane styleClass="stat-icon-container" style="-fx-background-color: rgba(34, 197, 94, 0.2);">
+                        <Label text="💰" style="-fx-font-size: 28px;"/>
+                    </StackPane>
+                    <VBox alignment="CENTER_LEFT">
+                        <Label text="Doanh số hôm nay" styleClass="stat-title"/>
+                        <Label text="2,500,000 đ" styleClass="stat-value" style="-fx-text-fill: -success-color;"/>
+                    </VBox>
+                </HBox>
+
+                <HBox styleClass="stat-card" spacing="15" alignment="CENTER_LEFT" prefWidth="280">
+                    <StackPane styleClass="stat-icon-container" style="-fx-background-color: rgba(251, 191, 36, 0.2);">
+                        <Label text="💳" style="-fx-font-size: 28px;"/>
+                    </StackPane>
+                    <VBox alignment="CENTER_LEFT">
+                        <Label text="Tiền nạp hôm nay" styleClass="stat-title"/>
+                        <Label text="5,000,000 đ" styleClass="stat-value" style="-fx-text-fill: #fbbf24;"/> </VBox>
+                </HBox>
+
+                <HBox styleClass="stat-card" spacing="15" alignment="CENTER_LEFT" prefWidth="280">
+                    <StackPane styleClass="stat-icon-container" style="-fx-background-color: rgba(248, 113, 113, 0.2);">
+                        <Label text="👥" style="-fx-font-size: 28px;"/>
+                    </StackPane>
+                    <VBox alignment="CENTER_LEFT">
+                        <Label text="Tổng thành viên" styleClass="stat-title"/>
+                        <Label text="156" styleClass="stat-value" style="-fx-text-fill: #f87171;"/> </VBox>
+                </HBox>
+
+                <HBox styleClass="stat-card" spacing="15" alignment="CENTER_LEFT" prefWidth="280">
+                    <StackPane styleClass="stat-icon-container" style="-fx-background-color: rgba(255, 255, 255, 0.1);">
+                        <Label text="👔" style="-fx-font-size: 28px;"/>
+                    </StackPane>
+                    <VBox alignment="CENTER_LEFT">
+                        <Label text="Nhân viên" styleClass="stat-title"/>
+                        <Label text="05" styleClass="stat-value" style="-fx-text-fill: white;"/>
+                    </VBox>
+                </HBox>
+
+            </FlowPane>
+        </VBox>
+    </content>
+</ScrollPane>

@@ -1,0 +1,68 @@
+/* --- client.css --- */
+
+/* 1. NỀN & FONT */
+.root {
+  -fx-background-image: url("../images/bg_gaming.jpg");
+  -fx-background-size: cover;
+  -fx-background-position: center;
+  -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* 2. THANH TOOLBAR TRÊN CÙNG (Thay cho glass-panel cũ) */
+.top-toolbar {
+  -fx-background-color: rgba(15, 23, 42, 0.9); /* Nền tối, mờ nhẹ */
+  -fx-border-color: rgba(255, 255, 255, 0.1);
+  -fx-border-width: 0 0 1 0; /* Chỉ kẻ viền dưới */
+  -fx-padding: 5 15; /* Gọn gàng */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
+
+/* 3. ĐỒNG HỒ (ĐÃ GIẢM ĐỘ CHÓI) */
+.time-compact {
+  -fx-text-fill: white; /* Đổi thành màu trắng cho dịu */
+  -fx-font-size: 28px; /* Nhỏ hơn (cũ là 48px) */
+  -fx-font-family: "Segoe UI Black";
+  /* Glow nhẹ màu xanh, không chói lòa như trước */
+  -fx-effect: dropshadow(gaussian, rgba(14, 165, 233, 0.4), 10, 0, 0, 0);
+  -fx-alignment: CENTER;
+}
+
+/* 4. SỐ DƯ (Nhỏ gọn) */
+.balance-compact {
+  -fx-text-fill: -success-color;
+  -fx-font-weight: bold;
+  -fx-font-size: 16px;
+}
+
+/* 5. NÚT CHỨC NĂNG TRÊN TOOLBAR (Nhỏ, nằm ngang) */
+.toolbar-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: #cbd5e1; /* Màu xám trắng */
+  -fx-font-size: 13px;
+  -fx-font-weight: bold;
+  -fx-border-color: rgba(255, 255, 255, 0.1);
+  -fx-border-radius: 4;
+  -fx-padding: 5 15;
+  -fx-cursor: hand;
+}
+
+.toolbar-button:hover {
+  -fx-background-color: rgba(255, 255, 255, 0.1);
+  -fx-text-fill: white;
+  -fx-border-color: -accent-color;
+}
+
+/* Nút Logout nổi bật hơn chút */
+.logout-compact {
+  -fx-background-color: rgba(239, 68, 68, 0.1);
+  -fx-text-fill: -danger-color;
+  -fx-border-color: -danger-color;
+  -fx-border-radius: 4;
+  -fx-cursor: hand;
+  -fx-font-weight: bold;
+  -fx-padding: 5 15;
+}
+.logout-compact:hover {
+  -fx-background-color: -danger-color;
+  -fx-text-fill: white;
+}

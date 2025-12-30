@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="1366" prefHeight="768">
+
+    <stylesheets>
+        <URL value="@../../css/base.css" />
+        <URL value="@../../css/client.css" />
+    </stylesheets>
+
+    <top>
+        <HBox styleClass="top-toolbar" alignment="CENTER_LEFT" spacing="20">
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="👤" style="-fx-font-size: 20px; -fx-text-fill: -accent-color;"/>
+                <VBox alignment="CENTER_LEFT">
+                    <Label text="lichdaica" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="MAY-05" style="-fx-text-fill: -text-muted; -fx-font-size: 10px;"/>
+                </VBox>
+            </HBox>
+
+            <Separator orientation="VERTICAL"/>
+
+            <HBox alignment="CENTER_LEFT" spacing="5">
+                <Label text="Số dư:" style="-fx-text-fill: -text-muted;"/>
+                <Label text="50.000 đ" styleClass="balance-compact"/>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER" spacing="10" style="-fx-background-color: rgba(0,0,0,0.3); -fx-padding: 2 20; -fx-background-radius: 20;">
+                <Label text="⏱" style="-fx-text-fill: white; -fx-font-size: 18px;"/>
+                <Label text="02:15:30" styleClass="time-compact"/>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="🍔 Gọi đồ" styleClass="toolbar-button" onAction="#openServiceMenu"/>
+            <Button text="💰 Nạp tiền" styleClass="toolbar-button"/>
+            <Button text="🔑 Đổi pass" styleClass="toolbar-button"/>
+
+            <Separator orientation="VERTICAL"/>
+
+            <Button text="Đăng xuất" styleClass="logout-compact" onAction="#handleLogout"/>
+
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane>
+             <Label text="CHÚC ĐẠI CA CHƠI GAME VUI VẺ!" style="-fx-text-fill: white; -fx-opacity: 0.1; -fx-font-size: 40px; -fx-font-weight: bold;"/>
+        </StackPane>
+    </center>
+
+</BorderPane>

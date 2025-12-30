@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cybergame.ui.fxcontroller.EmployeeController"
+            prefWidth="1366" prefHeight="768">
+
+    <stylesheets>
+        <URL value="@../../css/base.css" />
+        <URL value="@../../css/admin.css" /> </stylesheets>
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" 
+              style="-fx-background-color: -secondary-color; -fx-padding: 10 20; -fx-border-color: #020617; -fx-border-width: 0 0 2 0;">
+            
+            <Button fx:id="btnMenu" text="☰" styleClass="hamburger-button" onAction="#handleToggleMenu"/>
+            
+            <Label text="CYBER STAFF" 
+                   style="-fx-text-fill: -success-color; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Label text="Nhân viên:" style="-fx-text-fill: -text-muted;"/>
+                <Label fx:id="lblStaffName" text="Nguyễn Văn A" style="-fx-text-fill: -text-color; -fx-font-weight: bold;"/>
+                <Button text="Đăng xuất" style="-fx-background-color: -danger-color; -fx-text-fill: white; -fx-cursor: hand;" onAction="#handleLogout"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sidebar" prefWidth="260" styleClass="sidebar" spacing="0">
+            
+            <Label text="TRỰC CA" style="-fx-text-fill: #64748b; -fx-font-size: 11px; -fx-font-weight: bold; -fx-padding: 20 0 10 25;"/>
+
+            <Button text="📊   Tổng quan" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showOverview"/>
+
+            <Button text="🖥   Sơ đồ máy trạm" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showMachineMap"/>
+            
+            <Button text="🎮   Quản lý phiên chơi" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showSessionMgmt"/>
+            
+            <Button text="🔔   Yêu cầu / Order" maxWidth="Infinity" styleClass="sidebar-button" style="-fx-text-fill: -accent-color;" onAction="#showOrderRequests"/>
+            
+            <Separator style="-fx-background-color: #334155; -fx-opacity: 0.3; -fx-padding: 5 15;"/>
+            
+            <Label text="KHÁCH HÀNG" style="-fx-text-fill: #64748b; -fx-font-size: 11px; -fx-font-weight: bold; -fx-padding: 10 0 10 25;"/>
+
+            <Button text="users   Quản lý khách" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showCustomerMgmt"/>
+            
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: -primary-color; -fx-padding: 20;">
+            <Label text="Chọn chức năng để bắt đầu ca làm việc" style="-fx-text-fill: -text-muted; -fx-font-size: 16px;"/>
+        </StackPane>
+    </center>
+
+</BorderPane>
